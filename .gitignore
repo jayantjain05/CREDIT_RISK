@@ -1,0 +1,7 @@
+# Data and trained artifacts can contain sensitive borrower information.
+data/raw/
+data/processed/
+artifacts/
+__pycache__/
+.pytest_cache/
+*.pptx.inspect.ndjson

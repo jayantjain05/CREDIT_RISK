@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CreditLens — an interactive commercial credit analysis workspace." />
+    <title>CreditLens | Credit Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="CreditLens home"><span class="brand-mark">CL</span><span>credit<span>lens</span></span></a>
+      <nav aria-label="Primary navigation">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-link active" href="#overview"><span>◈</span> Overview</a>
+        <a class="nav-link" href="#financials"><span>▥</span> Financials</a>
+        <a class="nav-link" href="#ratios"><span>◌</span> Ratios &amp; trends</a>
+        <a class="nav-link" href="#stress"><span>⌁</span> Stress testing</a>
+        <p class="nav-label second">Portfolio</p>
+        <a class="nav-link" href="#watchlist"><span>◇</span> Watchlist <b>3</b></a>
+        <a class="nav-link" href="#documents"><span>▤</span> Documents</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="analyst-avatar">JJ</div><div><strong>Jayant Jain</strong><small>Senior Analyst</small></div><button class="more" aria-label="Account options">•••</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="menu-button" aria-label="Open navigation">☰</button>
+        <div class="crumbs">Portfolio <span>/</span> Manufacturing <span>/</span> <strong>Apex Components</strong></div>
+        <div class="top-actions"><span class="autosave"><i></i> All changes saved</span><button class="ghost-button" id="exportBtn">Export memo ↗</button><button class="avatar" aria-label="Profile">JJ</button></div>
+      </header>
+
+      <section class="hero" id="overview">
+        <div>
+          <p class="eyebrow">CREDIT REVIEW · FY 2025</p>
+          <h1>Apex Components <em>Private Limited</em></h1>
+          <p class="subtitle">Working capital renewal · ₹12.5 Cr exposure · Annual review</p>
+        </div>
+        <div class="decision-panel"><span>Recommended decision</span><strong><i></i> Approve with conditions</strong><button id="reviewBtn">Review conditions <span>→</span></button></div>
+      </section>
+
+      <section class="score-grid" aria-label="Credit score summary">
+        <article class="score-card main-score"><div><p>Credit score</p><h2 id="scoreValue">78<span>/100</span></h2><small id="scoreLabel">Strong</small></div><div class="score-ring" id="scoreRing"><span>78</span></div></article>
+        <article class="score-card"><p>Probability of default</p><h2 id="pdValue">1.84<span>%</span></h2><small class="up">↓ 0.31% <b>vs. prior review</b></small></article>
+        <article class="score-card"><p>Debt service coverage</p><h2 id="dscrValue">1.62<span>x</span></h2><small class="neutral">Target ≥ 1.35x</small></article>
+        <article class="score-card"><p>Risk grade</p><h2 class="grade" id="gradeValue">A−</h2><small class="neutral">Investment grade</small></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel financial-panel" id="financials">
+          <div class="panel-header"><div><p class="eyebrow">PERFORMANCE</p><h3>Financial trajectory</h3></div><button class="select-button">FY 23 — FY 25⌄</button></div>
+          <div class="chart-key"><span><i class="revenue-dot"></i> Revenue</span><span><i class="ebitda-dot"></i> EBITDA margin</span></div>
+          <div class="chart-wrap"><div class="chart-y"><span>₹ 160 Cr</span><span>₹ 120 Cr</span><span>₹ 80 Cr</span><span>₹ 40 Cr</span><span>₹ 0</span></div><div class="chart-area"><div class="gridlines"></div><svg viewBox="0 0 650 210" preserveAspectRatio="none" aria-label="Revenue trend chart"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d99555" stop-opacity=".25"/><stop offset="1" stop-color="#d99555" stop-opacity="0"/></linearGradient></defs><path d="M0,155 C55,145 75,130 115,133 S175,108 215,111 S282,94 325,96 S390,64 435,67 S510,39 550,43 S610,13 650,18 L650,210 L0,210Z" fill="url(#fill)"/><path d="M0,155 C55,145 75,130 115,133 S175,108 215,111 S282,94 325,96 S390,64 435,67 S510,39 550,43 S610,13 650,18" fill="none" stroke="#d99555" stroke-width="3"/></svg><div class="margin-line"><span style="left:8%">9.4%</span><span style="left:38%">10.8%</span><span style="left:69%">12.1%</span></div><div class="chart-years"><span>FY 23</span><span>FY 24</span><span>FY 25E</span></div></div></div>
+          <div class="financial-stats"><div><span>Revenue CAGR</span><strong>18.7%</strong></div><div><span>EBITDA margin</span><strong>12.1%</strong></div><div><span>Cash conversion</span><strong>84 days</strong></div></div>
+        </article>
+
+        <article class="panel profile-panel">
+          <div class="panel-header"><div><p class="eyebrow">BORROWER SNAPSHOT</p><h3>Business profile</h3></div><button class="icon-button" aria-label="More profile actions">•••</button></div>
+          <dl><div><dt>Industry</dt><dd>Auto Components</dd></div><div><dt>Founded</dt><dd>2008</dd></div><div><dt>Relationship</dt><dd>6 years</dd></div><div><dt>Banking share</dt><dd>42%</dd></div></dl>
+          <div class="profile-note"><span>✦</span><p><strong>Positive momentum.</strong> Margin expansion driven by product mix and operating leverage.</p></div>
+          <a href="#documents" class="text-link">View borrower profile <span>→</span></a>
+        </article>
+
+        <article class="panel ratio-panel" id="ratios">
+          <div class="panel-header"><div><p class="eyebrow">CREDIT HEALTH</p><h3>Key ratios</h3></div><span class="legend"><i></i> Within policy</span></div>
+          <div class="ratio-list">
+            <div><div class="ratio-top"><span>Net debt / EBITDA</span><strong id="leverageValue">2.4x</strong></div><div class="bar"><i style="width:48%"></i><b style="left:60%"></b></div><small>Policy limit 3.0x</small></div>
+            <div><div class="ratio-top"><span>Interest coverage</span><strong>4.8x</strong></div><div class="bar"><i style="width:68%"></i><b style="left:45%"></b></div><small>Policy minimum 3.0x</small></div>
+            <div><div class="ratio-top"><span>Current ratio</span><strong>1.31x</strong></div><div class="bar amber"><i style="width:43%"></i><b style="left:50%"></b></div><small>Policy minimum 1.25x</small></div>
+          </div>
+        </article>
+
+        <article class="panel stress-panel" id="stress">
+          <div class="panel-header"><div><p class="eyebrow">SENSITIVITY</p><h3>Downside resilience</h3></div><span class="scenario-badge" id="scenarioName">Base case</span></div>
+          <div class="stress-result"><span>Post-stress DSCR</span><strong id="stressDscr">1.42x</strong><small id="stressStatus">Above covenant</small></div>
+          <label for="stressRange">Revenue decline <output id="stressOutput">−10%</output></label><input id="stressRange" type="range" min="0" max="30" value="10" step="1" />
+          <div class="stress-scale"><span>0%</span><span>−15%</span><span>−30%</span></div>
+          <p class="stress-copy" id="stressCopy">The borrower retains adequate debt-servicing headroom under a moderate contraction.</p>
+        </article>
+
+        <article class="panel memo-panel" id="documents">
+          <div class="panel-header"><div><p class="eyebrow">ANALYST VIEW</p><h3>Credit highlights</h3></div><button class="text-button" id="memoBtn">Open memo ↗</button></div>
+          <div class="highlights"><p><span class="positive">+</span> Top-three customer concentration reduced to <strong>51%</strong> from 63%.</p><p><span class="positive">+</span> Promoter equity infusion of <strong>₹4.0 Cr</strong> completed in Q2.</p><p><span class="negative">−</span> Receivables ageing above 90 days requires monitoring.</p></div>
+          <div class="conditions"><span>2 conditions precedent</span><a href="#overview">View details →</a></div>
+        </article>
+      </section>
+      <footer>CreditLens · Internal credit decisioning workspace · Last refreshed 11 Jul 2026, 16:42 IST</footer>
+    </main>
+    <dialog id="memoDialog"><div class="dialog-head"><div><p class="eyebrow">CREDIT MEMO</p><h2>Apex Components Pvt Ltd</h2></div><button id="closeDialog" aria-label="Close memo">×</button></div><div class="memo-body"><h3>Recommendation</h3><p>Approve renewal of the ₹12.5 Cr working-capital facility, subject to monthly receivables reporting and a minimum current ratio of 1.25x.</p><h3>Rationale</h3><p>Revenue growth, expanding margins, and a completed promoter infusion support the renewal. The principal risk is working-capital intensity, mitigated by demonstrated collection discipline and covenant monitoring.</p></div><button class="primary-button" id="printBtn">Print credit memo</button></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
